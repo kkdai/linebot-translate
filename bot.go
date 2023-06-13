@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"net/http"
-	"strings"
 
 	"github.com/line/line-bot-sdk-go/v7/linebot"
 )
@@ -26,35 +25,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			// Handle only on text message
 			case *linebot.TextMessage:
 				// Directly to ChatGPT
-				if strings.Contains(message.Text, ":gpt") {
-					handleGPT(GPT_Complete, event, message.Text)
-				} else if strings.Contains(message.Text, ":draw") {
-					handleGPT(GPT_Draw, event, message.Text)
-				} else if isGroupEvent(event) {
-					// 如果聊天機器人在群組中，開始儲存訊息。
-					//
-				}
-
-			// Handle only on Sticker message
-			case *linebot.StickerMessage:
-				var kw string
-				for _, k := range message.Keywords {
-					kw = kw + "," + k
-				}
-
-				log.Println("Sticker: PID=", message.PackageID, " SID=", message.StickerID)
-
-				if isGroupEvent(event) {
-					// 在群組中，一樣紀錄起來不回覆。
-					// outStickerResult := fmt.Sprintf("貼圖訊息: %s ", kw)
-				} else {
-					// outStickerResult := fmt.Sprintf("貼圖訊息: %s, pkg: %s kw: %s  text: %s", message.StickerID, message.PackageID, kw, message.Text)
-
-					// 1 on 1 就回覆
-					// if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(outStickerResult)).Do(); err != nil {
-					// 	log.Print(err)
-					// }
-				}
+				handleGPT(GPT_Complete, event, message.Text)
 			}
 		}
 	}
