@@ -3,6 +3,15 @@ ChatGPT LINE Bot for translation
 
 [![GoDoc](https://godoc.org/github.com/kkdai/linebot-tanslate.svg?status.svg)](https://godoc.org/github.com/kkdai/linebot-tanslate)  ![Go](https://github.com/kkdai/linebot-tanslate/workflows/Go/badge.svg) [![goreportcard.com](https://goreportcard.com/badge/github.com/kkdai/linebot-tanslate)](https://goreportcard.com/report/github.com/kkdai/LineBotTemplate)
 
+Demo
+=============
+
+Fast Translation Assistant: Translate the text you need, if there is more Chinese, translate into English. Conversely, if there is more English, translate into Chinese. If there is a need to optimize the English, please help me to optimize it.
+
+![](./img/bot1.jpg)
+
+![](./img/bot2.jpg)
+
 How to use this
 =============
 
