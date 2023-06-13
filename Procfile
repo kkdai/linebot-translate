@@ -1,2 +1,1 @@
-web: linebot-chatgpt-template
-
+web: linebot-translate
