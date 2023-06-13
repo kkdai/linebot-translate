@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -25,7 +26,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			// Handle only on text message
 			case *linebot.TextMessage:
 				// Directly to ChatGPT
-				handleGPT(GPT_Complete, event, message.Text)
+				prompt := fmt.Sprintf(PromptFormat, message.Text)
+				handleGPT(GPT_Complete, event, prompt)
 			}
 		}
 	}
