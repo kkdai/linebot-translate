@@ -1,4 +1,4 @@
-module github.com/kkdai/linebot-tanslate
+module github.com/kkdai/linebot-translate
 
 // +heroku goVersion go1.20
 go 1.20
